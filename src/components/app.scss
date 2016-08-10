@@ -1,0 +1,18 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    body {
+        background: gray;
+        margin: 0;
+        #app {
+            background: #303030;
+            max-width: 480px;
+        }
+    }
+}
+html, body, #app {
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}

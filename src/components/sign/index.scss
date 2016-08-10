@@ -1,0 +1,49 @@
+@for $i from 1 through 3 {
+    @keyframes logo-arc#{$i} {
+        0%, #{(25*$i)-1}% { opacity: 0 }
+        #{25*$i+1}%, 100% { opacity: 1 }
+    }
+}
+
+.sign {
+    padding: 0 10%;
+    background: #424242;
+    height: 100%;
+    overflow-y: hidden;
+
+    .logo {
+        width: 50%;
+        margin: 10% 25% 2%;
+        transition: margin .5s;
+    }
+
+    .toggle-btn {
+        width: 26%;
+        margin: 20px 4% 0 0;
+    }
+
+    .sign-btn {
+        width: 70%;
+        margin-top: 20px;
+    }
+
+    &.sign-in {
+        .confirm-ipt {
+            overflow-y: hidden;
+            height: 0 !important;
+        }
+    }
+
+    &.loading {
+        .logo {
+            margin-top: 50%;
+            margin-bottom: 120%;
+
+            @for $i from 1 through 3 {
+                .arc#{$i} {
+                    animation: logo-arc#{$i} 2s linear infinite;
+                }
+            }
+        }
+    }
+}

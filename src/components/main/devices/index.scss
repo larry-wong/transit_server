@@ -1,0 +1,17 @@
+.device {
+    &-empty {
+        margin: 20px;
+        color: #757575;
+        font-style: italic;
+        font-size: 20px;
+    }
+    .des {
+        color: #757575 !important;
+        font-style: italic;
+    }
+    .offline {
+        .name {
+            color: #757575;
+        }
+    }
+}

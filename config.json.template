@@ -1,0 +1,7 @@
+{
+    "TCP_PORT": 1988,
+    "HTTP_PORT": 2016,
+    "API_VERSION": "0.0.1",
+    "JWT_SECRET": "your_secret",
+    "MONGODB_URL": "your_url"
+}
