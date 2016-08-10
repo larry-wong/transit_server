@@ -46,16 +46,21 @@ module.exports = {
         app.use(`${apiBase}/messages`, tokenAuthMiddleware
             , bodyParser.raw({limit: '1kb'}), messages);
 
-        // 2. Webpack hot middleware if in dev mode.
+        // 2. Webpack hot middleware if in dev mode,
         if (env === 'dev') {
             let compiler = webpack(webpackConfig);
             app.use(webpackDevMiddleware(compiler, {
                 noInfo: true
             }));
             app.use(webpackHotMiddleware(compiler));
+
+        // or static css & js;
+        } else {
+            app.use('/app.css', express.static(path.resolve(__dirname, '../../www/app.css')));
+            app.use('/app.js', express.static(path.resolve(__dirname, '../../www/app.js')));
         }
 
-        // 3. Static html, css & js;
+        // 3. index.html & react router.
         app.use('*', express.static(path.resolve(__dirname, '../../www')));
 
         let port = config.HTTP_PORT || 80;
