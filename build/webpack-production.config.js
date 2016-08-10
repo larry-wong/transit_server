@@ -13,6 +13,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('../config.json');
 
 const buildPath = path.resolve(__dirname, '../www');
 const nodeModulesPath = path.resolve(__dirname, '../node_modules');

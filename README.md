@@ -5,7 +5,7 @@ Before start, you have have [nodejs](https://nodejs.org/) installed.
 To deploy it on your own server, clone this project and run:
 ```
 npm i --production
-npm build
+npm run build
 ```
 Copy config.json.template to config.json and modify it.
 ```
