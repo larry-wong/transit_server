@@ -90,7 +90,7 @@ export default class Message extends Component {
                             primaryText = {`[${d.id}] ${d.name}${d.isOnline ? '' : ' (Offline)'}`}
                             disabled = {!d.isOnline}
                         ></MenuItem>
-                    )}
+                    ) || []}
                     </SelectField>
                     <Paper
                         zDepth = {2}
