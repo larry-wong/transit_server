@@ -60,10 +60,9 @@ export default class Sign extends Component {
                     className = 'confirm-ipt'
                     errorText = {errorText.confirm}
                 />
-                <div>
+                <div className = 'btn-container'>
                     <RaisedButton
                         icon = {isSignUp ? <ExpandMore /> : <ExpandLess />}
-                        className = 'toggle-btn'
                         onTouchTap = {_ => setSignUp(!isSignUp)}
                     />
                     <RaisedButton

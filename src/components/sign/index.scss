@@ -17,14 +17,14 @@
         transition: margin .5s;
     }
 
-    .toggle-btn {
-        width: 26%;
-        margin: 20px 4% 0 0;
+    .btn-container {
+        display: flex;
+        margin-top: 20px;
     }
 
     .sign-btn {
-        width: 70%;
-        margin-top: 20px;
+        margin-left: 4%;
+        flex: 1;
     }
 
     &.sign-in {
