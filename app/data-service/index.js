@@ -96,7 +96,8 @@ module.exports = {
                     [`deviceMap.${deviceId}`]: 1
                 }
             }, (error, result) => {
-                resolve(!error && result.value.deviceMap[deviceId]);
+                resolve(!error && Object.assign(
+                    result.value.deviceMap[deviceId], {id: deviceId}));
             }
         );
     }),

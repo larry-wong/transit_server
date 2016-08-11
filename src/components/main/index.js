@@ -80,9 +80,7 @@ export default class Main extends Component {
                     autoHideDuration = {4000}
                     onRequestClose = {hideSnack}
                 />
-                <div className = 'main-content'>
-                    {children}
-                </div>
+                {children}
             </div>
         );
     }

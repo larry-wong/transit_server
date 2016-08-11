@@ -10,6 +10,7 @@
 #
 =============================================================================*/
 
+import 'fetch-ie8'
 import { browserHistory } from 'react-router';
 import { showSnack, setProgressLoading } from 'actions/ui';
 
@@ -28,12 +29,15 @@ let ret = ({method = 'GET', url = '', params = {}, data, dispatch} = {}) => {
     dispatch && (timeout = setTimeout(_ =>
         dispatch(setProgressLoading(true)), 600));
 
-    const headers = new Headers();
-    headers.set('Content-Type', data instanceof Uint8Array
-        ? 'application/octet-stream' : 'application/json');
+    //const headers = new Headers();
+    //headers.set('Content-Type', data instanceof Uint8Array
+    //    ? 'application/octet-stream' : 'application/json');
     return fetch(`${apiBase}${url}${urlParams}`, {
         method,
-        headers,
+        headers: {
+            'Content-Type': data instanceof Uint8Array
+                ? 'application/octet-stream' : 'application/json'
+        },
         body: data instanceof Uint8Array ? data : JSON.stringify(data)
     }).then(res => {
         return res.json().then(data => {

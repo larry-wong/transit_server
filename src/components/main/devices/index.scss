@@ -1,4 +1,6 @@
 .device {
+    flex: 1;
+    overflow-y: auto;
     &-empty {
         margin: 20px;
         color: #757575;
