@@ -1,0 +1,10 @@
+{
+    "name": "Smart Home",
+    "display": "standalone",
+    "background_color": "#424242",
+    "icons": [{
+        "src": "favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }]
+}

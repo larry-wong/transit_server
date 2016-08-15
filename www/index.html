@@ -4,9 +4,18 @@
         <meta charset="utf-8">
         <title>Smart Home</title>
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1'>
-        <meta name='apple-mobile-web-app-capable' content='yes'>
+
+        <!-- Webapp for android chrome -->
+        <link rel='manifest' href='manifest.json'>
+
+        <!-- Webapp for android chrome prior to M39 -->
         <meta name='mobile-web-app-capable' content='yes'>
-        <link rel='icon' href='https://res.cloudinary.com/larry/image/upload/v1470405579/favicon_botdto.png'>
+        <link rel='icon' sizes="192x192" href='/favicon.png'>
+
+        <!-- Webapp for safari -->
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png">
+
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
         <link href='/app.css' rel='stylesheet' type='text/css'>
     </head>

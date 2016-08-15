@@ -70,7 +70,7 @@ module.exports = {
             _id: 0,
             deviceMap: 1
         }, (err, result) => {
-            const deviceMap = result.deviceMap || {};
+            const deviceMap = result && result.deviceMap || {};
             resolve(!err && Object.keys(deviceMap).map(id =>
                 Object.assign(deviceMap[id], {id})));
         });

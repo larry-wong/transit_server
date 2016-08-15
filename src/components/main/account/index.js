@@ -30,16 +30,16 @@ export default class Account extends Component {
     render() {
         console.log('render account...');
         let {user} = this.props;
-        return (!user ? null :
+        return (
             <div className = 'account'>
-                <Card className = 'card'>
+                {user ? <Card className = 'card'>
                     <CardHeader title = 'Your account:' />
                     <CardText>{user.username}</CardText>
-                </Card>
-                <Card className = 'card'>
+                </Card> : null}
+                {user ? <Card className = 'card'>
                     <CardHeader title = 'Your token:' />
                     <CardText>{user.token}</CardText>
-                </Card>
+                </Card> : null}
                 <RaisedButton
                     className = 'btn'
                     label = 'SIGN OUT'

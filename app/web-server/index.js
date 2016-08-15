@@ -54,14 +54,13 @@ module.exports = {
             }));
             app.use(webpackHotMiddleware(compiler));
 
-        // or static css & js;
-        } else {
-            app.use('/app.css', express.static(path.resolve(__dirname, '../../www/app.css')));
-            app.use('/app.js', express.static(path.resolve(__dirname, '../../www/app.js')));
         }
 
-        // 3. index.html & react router.
-        app.use('*', express.static(path.resolve(__dirname, '../../www')));
+        // 3. Static files & react router.
+        app.use('/', (req, res, next) => {
+            req.url.match(/\.(js|css|json|png)$/) || (req.url = '/');
+            next();
+        }, express.static(path.resolve(__dirname, '../../www')));
 
         let port = config.HTTP_PORT || 80;
         app.listen(port);

@@ -1,6 +1,8 @@
 .DS_Store
 config.json
 node_modules
+www/app.js
+www/app.css
 npm-debug.log
 test.js
 *.swp
